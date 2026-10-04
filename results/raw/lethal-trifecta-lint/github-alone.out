@@ -1,0 +1,462 @@
+{
+  "verdict": "danger",
+  "trifecta": true,
+  "present_capabilities": [
+    "external_comm",
+    "private_data",
+    "untrusted"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "add_comment_to_pending_review",
+      "reason": "'create_or_update_file' reads private data and 'add_comment_to_pending_review' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "add_issue_comment",
+      "reason": "'create_or_update_file' reads private data and 'add_issue_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "add_reply_to_pull_request_comment",
+      "reason": "'create_or_update_file' reads private data and 'add_reply_to_pull_request_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "create_pull_request",
+      "reason": "'create_or_update_file' reads private data and 'create_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "merge_pull_request",
+      "reason": "'create_or_update_file' reads private data and 'merge_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "pull_request_read",
+      "reason": "'create_or_update_file' reads private data and 'pull_request_read' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "pull_request_review_write",
+      "reason": "'create_or_update_file' reads private data and 'pull_request_review_write' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "request_copilot_review",
+      "reason": "'create_or_update_file' reads private data and 'request_copilot_review' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "update_issue_comment",
+      "reason": "'create_or_update_file' reads private data and 'update_issue_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "update_pull_request",
+      "reason": "'create_or_update_file' reads private data and 'update_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "create_or_update_file",
+      "egress_tool": "update_pull_request_branch",
+      "reason": "'create_or_update_file' reads private data and 'update_pull_request_branch' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "add_comment_to_pending_review",
+      "reason": "'get_file_contents' reads private data and 'add_comment_to_pending_review' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "add_issue_comment",
+      "reason": "'get_file_contents' reads private data and 'add_issue_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "add_reply_to_pull_request_comment",
+      "reason": "'get_file_contents' reads private data and 'add_reply_to_pull_request_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "create_pull_request",
+      "reason": "'get_file_contents' reads private data and 'create_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "merge_pull_request",
+      "reason": "'get_file_contents' reads private data and 'merge_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "pull_request_read",
+      "reason": "'get_file_contents' reads private data and 'pull_request_read' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "pull_request_review_write",
+      "reason": "'get_file_contents' reads private data and 'pull_request_review_write' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "request_copilot_review",
+      "reason": "'get_file_contents' reads private data and 'request_copilot_review' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "update_issue_comment",
+      "reason": "'get_file_contents' reads private data and 'update_issue_comment' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "update_pull_request",
+      "reason": "'get_file_contents' reads private data and 'update_pull_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "get_file_contents",
+      "egress_tool": "update_pull_request_branch",
+      "reason": "'get_file_contents' reads private data and 'update_pull_request_branch' can send it out, while the agent also ingests untrusted content"
+    }
+  ],
+  "tools": [
+    {
+      "name": "add_comment_to_pending_review",
+      "capabilities": [
+        "external_comm"
+      ],
+      "evidence": {
+        "external_comm": [
+          "comment"
+        ]
+      }
+    },
+    {
+      "name": "add_issue_comment",
+      "capabilities": [
+        "external_comm"
+      ],
+      "evidence": {
+        "external_comm": [
+          "comment"
+        ]
+      }
+    },
+    {
+      "name": "add_reply_to_pull_request_comment",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "comment",
+          "reply",
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "assign_copilot_to_issue",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_or_update_file",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "get_file"
+        ]
+      }
+    },
+    {
+      "name": "create_pull_request",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "create_repository",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "delete_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "fork_repository",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_commit",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_file_contents",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "get_file"
+        ]
+      }
+    },
+    {
+      "name": "get_label",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_latest_release",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_me",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_release_by_tag",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_tag",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_team_members",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_teams",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "issue_read",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "issue_write",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_branches",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_commits",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_issue_fields",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_issue_types",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_issues",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_pull_requests",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_releases",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_repository_collaborators",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_tags",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "merge_pull_request",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "pull_request_read",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "pull_request_review_write",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "push_files",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "request_copilot_review",
+      "capabilities": [
+        "external_comm"
+      ],
+      "evidence": {
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "search_code",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_commits",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_issues",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_pull_requests",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_repositories",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_users",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "sub_issue_write",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "ui_get",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "update_issue_comment",
+      "capabilities": [
+        "external_comm"
+      ],
+      "evidence": {
+        "external_comm": [
+          "comment"
+        ]
+      }
+    },
+    {
+      "name": "update_pull_request",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    },
+    {
+      "name": "update_pull_request_branch",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "pull_request"
+        ],
+        "external_comm": [
+          "request"
+        ]
+      }
+    }
+  ]
+}

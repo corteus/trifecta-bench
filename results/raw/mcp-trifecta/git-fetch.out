@@ -1,0 +1,85 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 2,
+  "tools": 13,
+  "trifecta_present": true,
+  "cross_server": true,
+  "risk_score": 90,
+  "counts": {
+    "critical": 1,
+    "high": 3,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "git::git_diff_unstaged"
+    ],
+    "untrusted_content": [
+      "fetch::fetch"
+    ],
+    "exfil": [
+      "git::git_diff_staged",
+      "git::git_commit",
+      "git::git_log",
+      "git::git_show"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA001",
+      "title": "Cross-server lethal trifecta present (invisible to per-server scanners)",
+      "severity": "critical",
+      "message": "This fleet can simultaneously (1) read private data, (2) ingest untrusted content, and (3) communicate externally. The three capabilities are spread across different servers, so no single-server audit would catch this. An attacker only needs to plant instructions in any untrusted content the agent reads.",
+      "location": "fetch+git",
+      "evidence": [
+        "private_data: git::git_diff_unstaged",
+        "untrusted_content: fetch::fetch",
+        "exfil: git::git_diff_staged, git::git_commit, git::git_log, git::git_show"
+      ],
+      "remediation": "Break the trifecta: remove or sandbox one leg. Common fixes: run untrusted-content tools in an isolated agent that has no private-data or exfil tools; require human approval on exfil actions; or apply content provenance / taint tracking so untrusted text can't trigger sensitive reads followed by outbound calls."
+    },
+    {
+      "id": "TRIFECTA002",
+      "title": "Example attack path #1",
+      "severity": "high",
+      "message": "Untrusted content enters via `fetch::fetch`, is used to read private data via `git::git_diff_unstaged`, and is exfiltrated via `git::git_diff_staged` (2 server(s) involved).",
+      "location": "fetch->git->git",
+      "evidence": [
+        "entry:  fetch::fetch - Fetches a URL from the internet and optionally extracts its contents as markdown. Although originally you did not have i",
+        "source: git::git_diff_unstaged - Shows changes in the working directory that are not yet staged",
+        "sink:   git::git_diff_staged - Shows changes that are staged for commit"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA003",
+      "title": "Example attack path #2",
+      "severity": "high",
+      "message": "Untrusted content enters via `fetch::fetch`, is used to read private data via `git::git_diff_unstaged`, and is exfiltrated via `git::git_commit` (2 server(s) involved).",
+      "location": "fetch->git->git",
+      "evidence": [
+        "entry:  fetch::fetch - Fetches a URL from the internet and optionally extracts its contents as markdown. Although originally you did not have i",
+        "source: git::git_diff_unstaged - Shows changes in the working directory that are not yet staged",
+        "sink:   git::git_commit - Records changes to the repository"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA004",
+      "title": "Example attack path #3",
+      "severity": "high",
+      "message": "Untrusted content enters via `fetch::fetch`, is used to read private data via `git::git_diff_unstaged`, and is exfiltrated via `git::git_log` (2 server(s) involved).",
+      "location": "fetch->git->git",
+      "evidence": [
+        "entry:  fetch::fetch - Fetches a URL from the internet and optionally extracts its contents as markdown. Although originally you did not have i",
+        "source: git::git_diff_unstaged - Shows changes in the working directory that are not yet staged",
+        "sink:   git::git_log - Shows the commit logs"
+      ],
+      "remediation": ""
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:slack",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "exfiltration_channel",
+        "private_data_source"
+      ],
+      "tools": [
+        {
+          "name": "conversations_history",
+          "capabilities": []
+        },
+        {
+          "name": "conversations_replies",
+          "capabilities": []
+        },
+        {
+          "name": "conversations_search_messages",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "users_search",
+          "capabilities": []
+        },
+        {
+          "name": "conversations_unreads",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "conversations_mark",
+          "capabilities": []
+        },
+        {
+          "name": "conversations_leave",
+          "capabilities": []
+        },
+        {
+          "name": "conversations_join",
+          "capabilities": []
+        },
+        {
+          "name": "channels_list",
+          "capabilities": []
+        },
+        {
+          "name": "channels_me",
+          "capabilities": []
+        },
+        {
+          "name": "usergroups_list",
+          "capabilities": []
+        },
+        {
+          "name": "usergroups_me",
+          "capabilities": []
+        },
+        {
+          "name": "usergroups_create",
+          "capabilities": []
+        },
+        {
+          "name": "usergroups_update",
+          "capabilities": []
+        },
+        {
+          "name": "usergroups_users_update",
+          "capabilities": []
+        },
+        {
+          "name": "saved_update",
+          "capabilities": []
+        },
+        {
+          "name": "saved_clear_completed",
+          "capabilities": []
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

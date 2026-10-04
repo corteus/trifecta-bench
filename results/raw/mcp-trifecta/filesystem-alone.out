@@ -1,0 +1,35 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 14,
+  "trifecta_present": false,
+  "cross_server": false,
+  "risk_score": 20,
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "filesystem::read_file",
+      "filesystem::read_text_file",
+      "filesystem::read_media_file",
+      "filesystem::read_multiple_files",
+      "filesystem::create_directory",
+      "filesystem::list_directory",
+      "filesystem::list_directory_with_sizes",
+      "filesystem::directory_tree",
+      "filesystem::move_file",
+      "filesystem::search_files",
+      "filesystem::get_file_info"
+    ],
+    "untrusted_content": [],
+    "exfil": []
+  },
+  "findings": []
+}

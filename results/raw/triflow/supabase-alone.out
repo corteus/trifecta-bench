@@ -1,0 +1,225 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 1,
+    "by_severity": {
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "TRIFLOW-TRIFECTA",
+      "finding_type": "lethal_trifecta",
+      "severity": "critical",
+      "title": "Lethal trifecta present within a single server: trifecta-bench:supabase/execute_sql [private_data_source] \u2192 trifecta-bench:supabase/list_projects [untrusted_content_ingress] \u2192 trifecta-bench:supabase/create_project [exfiltration_channel]",
+      "detail": "The installed fleet jointly satisfies the lethal trifecta within a single server: a tool that reads private data, a tool that ingests attacker-influenceable content, and a tool that can send data outside. Injected instructions in the ingested content can drive the private-data tool and then the exfiltration tool. Representative chain: trifecta-bench:supabase/execute_sql [private_data_source] \u2192 trifecta-bench:supabase/list_projects [untrusted_content_ingress] \u2192 trifecta-bench:supabase/create_project [exfiltration_channel].",
+      "remediation": "Break at least one leg for the agent that can reach all three: remove or scope down the exfiltration tool, isolate the untrusted-ingress server into a separate agent/session, or gate private-data reads behind human approval. The three capabilities must not be reachable together.",
+      "participants": [
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "execute_sql",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "list_branches",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "list_projects",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "get_project",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "get_project_url",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:supabase",
+          "tool_name": "create_project",
+          "capability": "exfiltration_channel",
+          "role": "exfiltration channel"
+        }
+      ],
+      "cross_server": false,
+      "location": null
+    }
+  ],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:supabase",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "exfiltration_channel",
+        "private_data_source",
+        "state_changing",
+        "untrusted_content_ingress"
+      ],
+      "tools": [
+        {
+          "name": "search_docs",
+          "capabilities": []
+        },
+        {
+          "name": "list_organizations",
+          "capabilities": []
+        },
+        {
+          "name": "get_organization",
+          "capabilities": []
+        },
+        {
+          "name": "list_projects",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "get_project",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "get_cost",
+          "capabilities": []
+        },
+        {
+          "name": "confirm_cost",
+          "capabilities": []
+        },
+        {
+          "name": "create_project",
+          "capabilities": [
+            "exfiltration_channel"
+          ]
+        },
+        {
+          "name": "pause_project",
+          "capabilities": []
+        },
+        {
+          "name": "restore_project",
+          "capabilities": []
+        },
+        {
+          "name": "list_tables",
+          "capabilities": []
+        },
+        {
+          "name": "list_extensions",
+          "capabilities": []
+        },
+        {
+          "name": "list_migrations",
+          "capabilities": []
+        },
+        {
+          "name": "apply_migration",
+          "capabilities": []
+        },
+        {
+          "name": "execute_sql",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "query_logs",
+          "capabilities": []
+        },
+        {
+          "name": "get_advisors",
+          "capabilities": []
+        },
+        {
+          "name": "get_project_url",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "get_publishable_keys",
+          "capabilities": []
+        },
+        {
+          "name": "generate_typescript_types",
+          "capabilities": []
+        },
+        {
+          "name": "list_edge_functions",
+          "capabilities": []
+        },
+        {
+          "name": "get_edge_function",
+          "capabilities": []
+        },
+        {
+          "name": "deploy_edge_function",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "create_branch",
+          "capabilities": []
+        },
+        {
+          "name": "list_branches",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "delete_branch",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "merge_branch",
+          "capabilities": []
+        },
+        {
+          "name": "reset_branch",
+          "capabilities": []
+        },
+        {
+          "name": "rebase_branch",
+          "capabilities": []
+        },
+        {
+          "name": "list_storage_buckets",
+          "capabilities": []
+        },
+        {
+          "name": "get_storage_config",
+          "capabilities": []
+        },
+        {
+          "name": "update_storage_config",
+          "capabilities": [
+            "state_changing"
+          ]
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "verdict": "warn",
+  "trifecta": false,
+  "present_capabilities": [
+    "external_comm",
+    "untrusted"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "conversations_history",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "conversations_replies",
+      "capabilities": [
+        "external_comm"
+      ],
+      "evidence": {
+        "external_comm": [
+          "replies"
+        ]
+      }
+    },
+    {
+      "name": "conversations_search_messages",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "users_search",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "conversations_unreads",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "conversations_mark",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "conversations_leave",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "conversations_join",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "channels_list",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "channels_me",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "usergroups_list",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "usergroups_me",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "usergroups_create",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "usergroups_update",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "usergroups_users_update",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "saved_update",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "saved_clear_completed",
+      "capabilities": [],
+      "evidence": {}
+    }
+  ]
+}

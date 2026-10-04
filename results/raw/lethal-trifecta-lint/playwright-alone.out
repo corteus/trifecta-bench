@@ -1,0 +1,542 @@
+{
+  "verdict": "danger",
+  "trifecta": true,
+  "present_capabilities": [
+    "external_comm",
+    "private_data",
+    "untrusted"
+  ],
+  "single_tool_trifecta": [
+    "browser_select_option"
+  ],
+  "exfil_pairs": [
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_close",
+      "reason": "'browser_select_option' reads private data and 'browser_close' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_resize",
+      "reason": "'browser_select_option' reads private data and 'browser_resize' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_console_messages",
+      "reason": "'browser_select_option' reads private data and 'browser_console_messages' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_handle_dialog",
+      "reason": "'browser_select_option' reads private data and 'browser_handle_dialog' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_emulate_media",
+      "reason": "'browser_select_option' reads private data and 'browser_emulate_media' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_evaluate",
+      "reason": "'browser_select_option' reads private data and 'browser_evaluate' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_file_upload",
+      "reason": "'browser_select_option' reads private data and 'browser_file_upload' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_drop",
+      "reason": "'browser_select_option' reads private data and 'browser_drop' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_find",
+      "reason": "'browser_select_option' reads private data and 'browser_find' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_fill_form",
+      "reason": "'browser_select_option' reads private data and 'browser_fill_form' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_press_key",
+      "reason": "'browser_select_option' reads private data and 'browser_press_key' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_type",
+      "reason": "'browser_select_option' reads private data and 'browser_type' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_navigate",
+      "reason": "'browser_select_option' reads private data and 'browser_navigate' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_navigate_back",
+      "reason": "'browser_select_option' reads private data and 'browser_navigate_back' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_network_requests",
+      "reason": "'browser_select_option' reads private data and 'browser_network_requests' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_network_request",
+      "reason": "'browser_select_option' reads private data and 'browser_network_request' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_run_code_unsafe",
+      "reason": "'browser_select_option' reads private data and 'browser_run_code_unsafe' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_take_screenshot",
+      "reason": "'browser_select_option' reads private data and 'browser_take_screenshot' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_snapshot",
+      "reason": "'browser_select_option' reads private data and 'browser_snapshot' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_click",
+      "reason": "'browser_select_option' reads private data and 'browser_click' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_drag",
+      "reason": "'browser_select_option' reads private data and 'browser_drag' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_hover",
+      "reason": "'browser_select_option' reads private data and 'browser_hover' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_tabs",
+      "reason": "'browser_select_option' reads private data and 'browser_tabs' can send it out, while the agent also ingests untrusted content"
+    },
+    {
+      "data_tool": "browser_select_option",
+      "egress_tool": "browser_wait_for",
+      "reason": "'browser_select_option' reads private data and 'browser_wait_for' can send it out, while the agent also ingests untrusted content"
+    }
+  ],
+  "tools": [
+    {
+      "name": "browser_close",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_resize",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_console_messages",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_handle_dialog",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_emulate_media",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_evaluate",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_file_upload",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "upload",
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_drop",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_find",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_fill_form",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_press_key",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_type",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_navigate",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_navigate_back",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_network_requests",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_network_request",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "request",
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_run_code_unsafe",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_take_screenshot",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_snapshot",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_click",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_drag",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_hover",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_select_option",
+      "capabilities": [
+        "external_comm",
+        "private_data",
+        "untrusted"
+      ],
+      "evidence": {
+        "private_data": [
+          "select"
+        ],
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_tabs",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    },
+    {
+      "name": "browser_wait_for",
+      "capabilities": [
+        "external_comm",
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "browser",
+          "browse"
+        ],
+        "external_comm": [
+          "browse"
+        ]
+      }
+    }
+  ]
+}

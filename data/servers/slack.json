@@ -1,0 +1,210 @@
+{
+  "listing": "static from source; the server contacts Slack at startup, so it cannot list tools with network off. Default = user OAuth token (xoxp), no optional SLACK_MCP_* flags.",
+  "server": "slack",
+  "serverInfo": {
+    "name": "Slack MCP Server",
+    "version": "1.3.0"
+  },
+  "tools": [
+    {
+      "annotations": null,
+      "description": "Get messages from the channel (or DM) by channel_id, the last row/column in the response is used as 'cursor' parameter for pagination if not empty",
+      "inputSchema": null,
+      "labels": [
+        "P",
+        "U"
+      ],
+      "name": "conversations_history",
+      "reasons": {
+        "P": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)",
+        "U": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Get a thread of messages posted to a conversation by channelID and thread_ts, the last row/column in the response is used as 'cursor' parameter for pagination if not empty",
+      "inputSchema": null,
+      "labels": [
+        "P",
+        "U"
+      ],
+      "name": "conversations_replies",
+      "reasons": {
+        "P": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)",
+        "U": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Search messages in a public channel, private channel, or direct message (DM, or IM) conversation using filters. All filters are optional, if not provided then search_query is required.",
+      "inputSchema": null,
+      "labels": [
+        "P",
+        "U"
+      ],
+      "name": "conversations_search_messages",
+      "reasons": {
+        "P": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)",
+        "U": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Search for users by name, email, display name, or Slack user ID. If a Slack user ID is provided (e.g. U07VCEPP4N5), the user is looked up directly. Returns user details and DM channel ID if available.",
+      "inputSchema": null,
+      "labels": [
+        "P"
+      ],
+      "name": "users_search",
+      "reasons": {
+        "P": "returns workspace directory details outsiders cannot see"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Get unread messages across all channels. With browser session tokens (xoxc/xoxd), uses a single API call for complete results. With OAuth user tokens (xoxp), scans a subset of channels per type (limited by max_channels) \u2014 results may be partial on large workspaces. Results are prioritized: DMs > group DMs > partner channels > internal channels.",
+      "inputSchema": null,
+      "labels": [
+        "P",
+        "U"
+      ],
+      "name": "conversations_unreads",
+      "reasons": {
+        "P": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)",
+        "U": "returns channel, DM or thread messages: private to the workspace (P), written by other people (U)"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Mark a channel or DM as read. If no timestamp is provided, marks all messages as read.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "conversations_mark",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Leave a channel, group conversation, or DM. Cannot leave the #general channel.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "conversations_leave",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Join a public channel. Use channels_list or channels_me to find channel IDs.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "conversations_join",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Get list of channels",
+      "inputSchema": null,
+      "labels": [
+        "P"
+      ],
+      "name": "channels_list",
+      "reasons": {
+        "P": "returns workspace directory details outsiders cannot see"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "List channels you are a member of. Unlike channels_list which returns all workspace channels, this returns only channels you have joined. Useful on large workspaces where channels_list returns thousands of results.",
+      "inputSchema": null,
+      "labels": [
+        "P"
+      ],
+      "name": "channels_me",
+      "reasons": {
+        "P": "returns workspace directory details outsiders cannot see"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "List all user groups (subteams) in the Slack workspace. User groups are mention groups like @engineering or @design that notify all members. Use this to discover available groups, check group membership counts, or find a group's ID before joining/updating it. Returns CSV with columns: id, name, handle, description, user_count, is_external.",
+      "inputSchema": null,
+      "labels": [
+        "P",
+        "U"
+      ],
+      "name": "usergroups_list",
+      "reasons": {
+        "P": "returns user groups and their descriptions, written by other members",
+        "U": "returns user groups and their descriptions, written by other members"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Manage your own user group membership. Use action='list' to see which groups you belong to. Use action='join' with a usergroup_id to add yourself to a group (e.g., to receive @mentions). Use action='leave' with a usergroup_id to remove yourself. This is the easiest way to join/leave groups without needing to know the full member list.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "usergroups_me",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Create a new user group (mention group) in the Slack workspace. After creation, use usergroups_users_update to add members, or users can join themselves with usergroups_me. The handle becomes the @mention (e.g., handle='engineering' creates @engineering).",
+      "inputSchema": null,
+      "labels": [
+        "E"
+      ],
+      "name": "usergroups_create",
+      "reasons": {
+        "E": "writes a group name, handle or description that every member of the workspace can read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Update a user group's metadata: name, handle (@mention), description, or default channels. Does NOT change members - use usergroups_users_update for that. At least one field must be provided.",
+      "inputSchema": null,
+      "labels": [
+        "E"
+      ],
+      "name": "usergroups_update",
+      "reasons": {
+        "E": "writes a group name, handle or description that every member of the workspace can read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Replace all members of a user group with a new list. WARNING: This completely replaces the member list - any user not in the 'users' parameter will be removed. To add/remove just yourself, use usergroups_me instead. To add a single user without removing others, first get current members from usergroups_list with include_users=true, then call this with the combined list.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "usergroups_users_update",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Update a saved item: mark as completed, set a due date, or both. Use item_id and ts values from saved_list output. Replaces the deprecated stars.add/stars.remove APIs.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "saved_update",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    },
+    {
+      "annotations": null,
+      "description": "Clear all completed saved items from the 'Save for Later' panel. This is a bulk operation that removes all items with state='completed'.",
+      "inputSchema": null,
+      "labels": [],
+      "name": "saved_clear_completed",
+      "reasons": {
+        "none": "changes the user's own state without text others read"
+      }
+    }
+  ]
+}

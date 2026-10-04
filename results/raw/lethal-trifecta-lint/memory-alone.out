@@ -1,0 +1,54 @@
+{
+  "verdict": "ok",
+  "trifecta": false,
+  "present_capabilities": [],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "create_entities",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_relations",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "add_observations",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "delete_entities",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "delete_observations",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "delete_relations",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "read_graph",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_nodes",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "open_nodes",
+      "capabilities": [],
+      "evidence": {}
+    }
+  ]
+}

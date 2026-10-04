@@ -1,0 +1,86 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 17,
+  "trifecta_present": true,
+  "cross_server": false,
+  "risk_score": 75,
+  "counts": {
+    "critical": 0,
+    "high": 4,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "slack::conversations_search_messages"
+    ],
+    "untrusted_content": [
+      "slack::users_search",
+      "slack::usergroups_list",
+      "slack::usergroups_create"
+    ],
+    "exfil": [
+      "slack::conversations_unreads",
+      "slack::usergroups_list"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA001",
+      "title": "Lethal trifecta present within the fleet",
+      "severity": "high",
+      "message": "This fleet can simultaneously (1) read private data, (2) ingest untrusted content, and (3) communicate externally. At least one server combines all three capabilities on its own.",
+      "location": "slack",
+      "evidence": [
+        "private_data: slack::conversations_search_messages",
+        "untrusted_content: slack::users_search, slack::usergroups_list, slack::usergroups_create",
+        "exfil: slack::conversations_unreads, slack::usergroups_list",
+        "note: server(s) slack individually combine all three capabilities."
+      ],
+      "remediation": "Break the trifecta: remove or sandbox one leg. Common fixes: run untrusted-content tools in an isolated agent that has no private-data or exfil tools; require human approval on exfil actions; or apply content provenance / taint tracking so untrusted text can't trigger sensitive reads followed by outbound calls."
+    },
+    {
+      "id": "TRIFECTA002",
+      "title": "Example attack path #1",
+      "severity": "high",
+      "message": "Untrusted content enters via `slack::users_search`, is used to read private data via `slack::conversations_search_messages`, and is exfiltrated via `slack::conversations_unreads` (1 server(s) involved).",
+      "location": "slack->slack->slack",
+      "evidence": [
+        "entry:  slack::users_search - Search for users by name, email, display name, or Slack user ID. If a Slack user ID is provided (e.g. U07VCEPP4N5), the ",
+        "source: slack::conversations_search_messages - Search messages in a public channel, private channel, or direct message (DM, or IM) conversation using filters. All filt",
+        "sink:   slack::conversations_unreads - Get unread messages across all channels. With browser session tokens (xoxc/xoxd), uses a single API call for complete re"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA003",
+      "title": "Example attack path #2",
+      "severity": "high",
+      "message": "Untrusted content enters via `slack::users_search`, is used to read private data via `slack::conversations_search_messages`, and is exfiltrated via `slack::usergroups_list` (1 server(s) involved).",
+      "location": "slack->slack->slack",
+      "evidence": [
+        "entry:  slack::users_search - Search for users by name, email, display name, or Slack user ID. If a Slack user ID is provided (e.g. U07VCEPP4N5), the ",
+        "source: slack::conversations_search_messages - Search messages in a public channel, private channel, or direct message (DM, or IM) conversation using filters. All filt",
+        "sink:   slack::usergroups_list - List all user groups (subteams) in the Slack workspace. User groups are mention groups like @engineering or @design that"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA004",
+      "title": "Example attack path #3",
+      "severity": "high",
+      "message": "Untrusted content enters via `slack::usergroups_list`, is used to read private data via `slack::conversations_search_messages`, and is exfiltrated via `slack::conversations_unreads` (1 server(s) involved).",
+      "location": "slack->slack->slack",
+      "evidence": [
+        "entry:  slack::usergroups_list - List all user groups (subteams) in the Slack workspace. User groups are mention groups like @engineering or @design that",
+        "source: slack::conversations_search_messages - Search messages in a public channel, private channel, or direct message (DM, or IM) conversation using filters. All filt",
+        "sink:   slack::conversations_unreads - Get unread messages across all channels. With browser session tokens (xoxc/xoxd), uses a single API call for complete re"
+      ],
+      "remediation": ""
+    }
+  ]
+}

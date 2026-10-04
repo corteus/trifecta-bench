@@ -1,0 +1,286 @@
+{
+  "verdict": "warn",
+  "trifecta": false,
+  "present_capabilities": [
+    "external_comm",
+    "private_data"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "API-get-user",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-get-users",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-get-self",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-post-search",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-get-block-children",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-patch-block-children",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-block",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-update-a-block",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-delete-a-block",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-page",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-patch-page",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-post-page",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-page-property",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-comment",
+      "capabilities": [
+        "external_comm",
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ],
+        "external_comm": [
+          "comment"
+        ]
+      }
+    },
+    {
+      "name": "API-create-a-comment",
+      "capabilities": [
+        "external_comm",
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ],
+        "external_comm": [
+          "comment"
+        ]
+      }
+    },
+    {
+      "name": "API-query-data-source",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion",
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-data-source",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-update-a-data-source",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-create-a-data-source",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-list-data-source-templates",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-a-database",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database",
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-move-page",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-retrieve-page-markdown",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    },
+    {
+      "name": "API-update-page-markdown",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "notion"
+        ]
+      }
+    }
+  ]
+}

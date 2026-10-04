@@ -1,0 +1,13 @@
+[project]
+name = "trifecta-bench"
+version = "0.1.0"
+description = "Tests lethal trifecta checkers on the tool lists of real MCP servers."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

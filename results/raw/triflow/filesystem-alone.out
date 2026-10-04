@@ -1,0 +1,108 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:filesystem",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "private_data_source",
+        "state_changing"
+      ],
+      "tools": [
+        {
+          "name": "read_file",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "read_text_file",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "read_media_file",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "read_multiple_files",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "write_file",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "edit_file",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "create_directory",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "list_directory",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "list_directory_with_sizes",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "directory_tree",
+          "capabilities": []
+        },
+        {
+          "name": "move_file",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "search_files",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "get_file_info",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "list_allowed_directories",
+          "capabilities": []
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

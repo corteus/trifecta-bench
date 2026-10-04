@@ -1,0 +1,22 @@
+{
+  "verdict": "ok",
+  "trifecta": false,
+  "present_capabilities": [
+    "untrusted"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "fetch",
+      "capabilities": [
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "fetch"
+        ]
+      }
+    }
+  ]
+}

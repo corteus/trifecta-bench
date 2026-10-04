@@ -1,0 +1,171 @@
+{
+  "verdict": "ok",
+  "trifecta": false,
+  "present_capabilities": [
+    "private_data"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "read_file",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "read_file"
+        ]
+      }
+    },
+    {
+      "name": "read_text_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "read_media_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "read_multiple_files",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "write_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "edit_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_directory",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_directory",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "list_directory"
+        ]
+      }
+    },
+    {
+      "name": "list_directory_with_sizes",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "list_directory"
+        ]
+      }
+    },
+    {
+      "name": "directory_tree",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "move_file",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "search_files",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "glob"
+        ]
+      }
+    },
+    {
+      "name": "get_file_info",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "get_file"
+        ]
+      }
+    },
+    {
+      "name": "list_allowed_directories",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_status",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff_unstaged",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff_staged",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_commit",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_add",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_reset",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_log",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_create_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_checkout",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_show",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_branch",
+      "capabilities": [],
+      "evidence": {}
+    }
+  ]
+}

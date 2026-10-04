@@ -1,0 +1,164 @@
+{
+  "_listing": "static from source; the server contacts Slack at startup, so it cannot list tools with network off. Default = user OAuth token (xoxp), no optional SLACK_MCP_* flags.",
+  "server": "slack",
+  "serverInfo": {
+    "name": "Slack MCP Server",
+    "version": "1.3.0"
+  },
+  "tools": [
+    {
+      "_condition": "if shouldAddTool(ToolConversationsHistory, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:130",
+      "description": "Get messages from the channel (or DM) by channel_id, the last row/column in the response is used as 'cursor' parameter for pagination if not empty",
+      "name": "conversations_history"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolConversationsReplies, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:153",
+      "description": "Get a thread of messages posted to a conversation by channelID and thread_ts, the last row/column in the response is used as 'cursor' parameter for pagination if not empty",
+      "name": "conversations_replies"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolConversationsAddMessage, enabledTools, \"SLACK_MCP_ADD_MESSAGE_TOOL\") {",
+      "_default_on": false,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:180",
+      "description": "Add a message to a public channel, private channel, or direct message (DM, or IM) conversation by channel_id and thread_ts.",
+      "name": "conversations_add_message"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolReactionsAdd, enabledTools, \"SLACK_MCP_REACTION_TOOL\") {",
+      "_default_on": false,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:205",
+      "description": "Add an emoji reaction to a message in a public channel, private channel, or direct message (DM, or IM) conversation.",
+      "name": "reactions_add"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolReactionsRemove, enabledTools, \"SLACK_MCP_REACTION_TOOL\") {",
+      "_default_on": false,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:224",
+      "description": "Remove an emoji reaction from a message in a public channel, private channel, or direct message (DM, or IM) conversation.",
+      "name": "reactions_remove"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolAttachmentGetData, enabledTools, \"SLACK_MCP_ATTACHMENT_TOOL\") {",
+      "_default_on": false,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:243",
+      "description": "Download an attachment's content by file ID. Returns file metadata and content (text files as-is, binary files as base64). Maximum file size is 5MB.",
+      "name": "attachment_get_data"
+    },
+    {
+      "_condition": "if !provider.IsBotToken() && shouldAddTool(ToolConversationsSearchMessages, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:254",
+      "description": "Search messages in a public channel, private channel, or direct message (DM, or IM) conversation using filters. All filters are optional, if not provided then search_query is required.",
+      "name": "conversations_search_messages"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsersSearch, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:303",
+      "description": "Search for users by name, email, display name, or Slack user ID. If a Slack user ID is provided (e.g. U07VCEPP4N5), the user is looked up directly. Returns user details and DM channel ID if available.",
+      "name": "users_search"
+    },
+    {
+      "_condition": "if !provider.IsBotToken() && shouldAddTool(ToolConversationsUnreads, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:321",
+      "description": "Get unread messages across all channels. With browser session tokens (xoxc/xoxd), uses a single API call for complete results. With OAuth user tokens (xoxp), scans a subset of channels per type (limited by max_channels) \u2014 results may be partial on large workspaces. Results are prioritized: DMs > group DMs > partner channels > internal channels.",
+      "name": "conversations_unreads"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolConversationsMark, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:354",
+      "description": "Mark a channel or DM as read. If no timestamp is provided, marks all messages as read.",
+      "name": "conversations_mark"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolConversationsLeave, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:369",
+      "description": "Leave a channel, group conversation, or DM. Cannot leave the #general channel.",
+      "name": "conversations_leave"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolConversationsJoin, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:381",
+      "description": "Join a public channel. Use channels_list or channels_me to find channel IDs.",
+      "name": "conversations_join"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolChannelsList, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:395",
+      "description": "Get list of channels",
+      "name": "channels_list"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolChannelsMe, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:424",
+      "description": "List channels you are a member of. Unlike channels_list which returns all workspace channels, this returns only channels you have joined. Useful on large workspaces where channels_list returns thousands of results.",
+      "name": "channels_me"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsergroupsList, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:443",
+      "description": "List all user groups (subteams) in the Slack workspace. User groups are mention groups like @engineering or @design that notify all members. Use this to discover available groups, check group membership counts, or find a group's ID before joining/updating it. Returns CSV with columns: id, name, handle, description, user_count, is_external.",
+      "name": "usergroups_list"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsergroupsMe, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:463",
+      "description": "Manage your own user group membership. Use action='list' to see which groups you belong to. Use action='join' with a usergroup_id to add yourself to a group (e.g., to receive @mentions). Use action='leave' with a usergroup_id to remove yourself. This is the easiest way to join/leave groups without needing to know the full member list.",
+      "name": "usergroups_me"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsergroupsCreate, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:477",
+      "description": "Create a new user group (mention group) in the Slack workspace. After creation, use usergroups_users_update to add members, or users can join themselves with usergroups_me. The handle becomes the @mention (e.g., handle='engineering' creates @engineering).",
+      "name": "usergroups_create"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsergroupsUpdate, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:498",
+      "description": "Update a user group's metadata: name, handle (@mention), description, or default channels. Does NOT change members - use usergroups_users_update for that. At least one field must be provided.",
+      "name": "usergroups_update"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolUsergroupsUsersUpdate, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:522",
+      "description": "Replace all members of a user group with a new list. WARNING: This completely replaces the member list - any user not in the 'users' parameter will be removed. To add/remove just yourself, use usergroups_me instead. To add a single user without removing others, first get current members from usergroups_list with include_users=true, then call this with the combined list.",
+      "name": "usergroups_users_update"
+    },
+    {
+      "_condition": "if !provider.IsBotToken() && !provider.IsOAuth() && shouldAddTool(ToolSavedList, enabledTools, \"\") {",
+      "_default_on": false,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:541",
+      "description": "List saved items from Slack's 'Save for Later' panel. Returns items the user has saved, with optional message content. Replaces the deprecated stars.list API. Requires browser session tokens (xoxc/xoxd).",
+      "name": "saved_list"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolSavedUpdate, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:564",
+      "description": "Update a saved item: mark as completed, set a due date, or both. Use item_id and ts values from saved_list output. Replaces the deprecated stars.add/stars.remove APIs.",
+      "name": "saved_update"
+    },
+    {
+      "_condition": "if shouldAddTool(ToolSavedClearCompleted, enabledTools, \"\") {",
+      "_default_on": true,
+      "_source": "korotovsky/slack-mcp-server@v1.3.0 (4bf92874) pkg/server/server.go:586",
+      "description": "Clear all completed saved items from the 'Save for Later' panel. This is a bulk operation that removes all items with state='completed'.",
+      "name": "saved_clear_completed"
+    }
+  ]
+}

@@ -1,0 +1,1914 @@
+{
+  "not_applicable": {
+    "tracewall": "a runtime firewall that judges individual tool calls during a session, with no input for a tool list"
+  },
+  "results": [
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=danger present=['external_comm', 'private_data', 'untrusted']",
+      "exit_code": 2,
+      "scenario": "github-alone",
+      "status": "ok",
+      "tool_labels": {
+        "github/add_comment_to_pending_review": [
+          "E"
+        ],
+        "github/add_issue_comment": [
+          "E"
+        ],
+        "github/add_reply_to_pull_request_comment": [
+          "U",
+          "E"
+        ],
+        "github/assign_copilot_to_issue": [],
+        "github/create_branch": [],
+        "github/create_or_update_file": [
+          "P"
+        ],
+        "github/create_pull_request": [
+          "U",
+          "E"
+        ],
+        "github/create_repository": [],
+        "github/delete_file": [],
+        "github/fork_repository": [],
+        "github/get_commit": [],
+        "github/get_file_contents": [
+          "P"
+        ],
+        "github/get_label": [],
+        "github/get_latest_release": [],
+        "github/get_me": [],
+        "github/get_release_by_tag": [],
+        "github/get_tag": [],
+        "github/get_team_members": [],
+        "github/get_teams": [],
+        "github/issue_read": [],
+        "github/issue_write": [],
+        "github/list_branches": [],
+        "github/list_commits": [],
+        "github/list_issue_fields": [],
+        "github/list_issue_types": [],
+        "github/list_issues": [],
+        "github/list_pull_requests": [],
+        "github/list_releases": [],
+        "github/list_repository_collaborators": [],
+        "github/list_tags": [],
+        "github/merge_pull_request": [
+          "U",
+          "E"
+        ],
+        "github/pull_request_read": [
+          "U",
+          "E"
+        ],
+        "github/pull_request_review_write": [
+          "U",
+          "E"
+        ],
+        "github/push_files": [],
+        "github/request_copilot_review": [
+          "E"
+        ],
+        "github/search_code": [],
+        "github/search_commits": [],
+        "github/search_issues": [],
+        "github/search_pull_requests": [],
+        "github/search_repositories": [],
+        "github/search_users": [],
+        "github/sub_issue_write": [],
+        "github/ui_get": [],
+        "github/update_issue_comment": [
+          "E"
+        ],
+        "github/update_pull_request": [
+          "U",
+          "E"
+        ],
+        "github/update_pull_request_branch": [
+          "U",
+          "E"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=warn present=['private_data', 'untrusted']",
+      "exit_code": 0,
+      "scenario": "supabase-alone",
+      "status": "ok",
+      "tool_labels": {
+        "supabase/apply_migration": [
+          "P"
+        ],
+        "supabase/confirm_cost": [],
+        "supabase/create_branch": [
+          "P"
+        ],
+        "supabase/create_project": [],
+        "supabase/delete_branch": [],
+        "supabase/deploy_edge_function": [],
+        "supabase/execute_sql": [
+          "P"
+        ],
+        "supabase/generate_typescript_types": [],
+        "supabase/get_advisors": [
+          "P"
+        ],
+        "supabase/get_cost": [],
+        "supabase/get_edge_function": [],
+        "supabase/get_organization": [],
+        "supabase/get_project": [],
+        "supabase/get_project_url": [
+          "U"
+        ],
+        "supabase/get_publishable_keys": [],
+        "supabase/get_storage_config": [],
+        "supabase/list_branches": [],
+        "supabase/list_edge_functions": [],
+        "supabase/list_extensions": [
+          "P"
+        ],
+        "supabase/list_migrations": [
+          "P"
+        ],
+        "supabase/list_organizations": [],
+        "supabase/list_projects": [],
+        "supabase/list_storage_buckets": [],
+        "supabase/list_tables": [],
+        "supabase/merge_branch": [],
+        "supabase/pause_project": [],
+        "supabase/query_logs": [
+          "P"
+        ],
+        "supabase/rebase_branch": [],
+        "supabase/reset_branch": [],
+        "supabase/restore_project": [],
+        "supabase/search_docs": [],
+        "supabase/update_storage_config": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=warn present=['external_comm', 'untrusted']",
+      "exit_code": 0,
+      "scenario": "slack-alone",
+      "status": "ok",
+      "tool_labels": {
+        "slack/channels_list": [],
+        "slack/channels_me": [],
+        "slack/conversations_history": [],
+        "slack/conversations_join": [],
+        "slack/conversations_leave": [],
+        "slack/conversations_mark": [],
+        "slack/conversations_replies": [
+          "E"
+        ],
+        "slack/conversations_search_messages": [],
+        "slack/conversations_unreads": [
+          "U",
+          "E"
+        ],
+        "slack/saved_clear_completed": [],
+        "slack/saved_update": [],
+        "slack/usergroups_create": [],
+        "slack/usergroups_list": [],
+        "slack/usergroups_me": [],
+        "slack/usergroups_update": [],
+        "slack/usergroups_users_update": [],
+        "slack/users_search": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=danger present=['external_comm', 'private_data', 'untrusted']",
+      "exit_code": 2,
+      "scenario": "playwright-alone",
+      "status": "ok",
+      "tool_labels": {
+        "playwright/browser_click": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_close": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_console_messages": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_drag": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_drop": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_emulate_media": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_evaluate": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_file_upload": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_fill_form": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_find": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_handle_dialog": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_hover": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_navigate": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_navigate_back": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_network_request": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_network_requests": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_press_key": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_resize": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_run_code_unsafe": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_select_option": [
+          "P",
+          "U",
+          "E"
+        ],
+        "playwright/browser_snapshot": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_tabs": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_take_screenshot": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_type": [
+          "U",
+          "E"
+        ],
+        "playwright/browser_wait_for": [
+          "U",
+          "E"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=warn present=['external_comm', 'private_data']",
+      "exit_code": 0,
+      "scenario": "notion-alone",
+      "status": "ok",
+      "tool_labels": {
+        "notion/API-create-a-comment": [
+          "P",
+          "E"
+        ],
+        "notion/API-create-a-data-source": [
+          "P"
+        ],
+        "notion/API-delete-a-block": [
+          "P"
+        ],
+        "notion/API-get-block-children": [
+          "P"
+        ],
+        "notion/API-get-self": [
+          "P"
+        ],
+        "notion/API-get-user": [
+          "P"
+        ],
+        "notion/API-get-users": [
+          "P"
+        ],
+        "notion/API-list-data-source-templates": [
+          "P"
+        ],
+        "notion/API-move-page": [
+          "P"
+        ],
+        "notion/API-patch-block-children": [
+          "P"
+        ],
+        "notion/API-patch-page": [
+          "P"
+        ],
+        "notion/API-post-page": [
+          "P"
+        ],
+        "notion/API-post-search": [
+          "P"
+        ],
+        "notion/API-query-data-source": [
+          "P"
+        ],
+        "notion/API-retrieve-a-block": [
+          "P"
+        ],
+        "notion/API-retrieve-a-comment": [
+          "P",
+          "E"
+        ],
+        "notion/API-retrieve-a-data-source": [
+          "P"
+        ],
+        "notion/API-retrieve-a-database": [
+          "P"
+        ],
+        "notion/API-retrieve-a-page": [
+          "P"
+        ],
+        "notion/API-retrieve-a-page-property": [
+          "P"
+        ],
+        "notion/API-retrieve-page-markdown": [
+          "P"
+        ],
+        "notion/API-update-a-block": [
+          "P"
+        ],
+        "notion/API-update-a-data-source": [
+          "P"
+        ],
+        "notion/API-update-page-markdown": [
+          "P"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=['private_data']",
+      "exit_code": 0,
+      "scenario": "filesystem-alone",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [],
+        "filesystem/read_multiple_files": [],
+        "filesystem/read_text_file": [],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=[]",
+      "exit_code": 0,
+      "scenario": "memory-alone",
+      "status": "ok",
+      "tool_labels": {
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=[]",
+      "exit_code": 0,
+      "scenario": "git-alone",
+      "status": "ok",
+      "tool_labels": {
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=['untrusted']",
+      "exit_code": 0,
+      "scenario": "fetch-alone",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=warn present=['private_data', 'untrusted']",
+      "exit_code": 0,
+      "scenario": "filesystem-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [],
+        "filesystem/read_multiple_files": [],
+        "filesystem/read_text_file": [],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=['untrusted']",
+      "exit_code": 0,
+      "scenario": "git-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=['private_data']",
+      "exit_code": 0,
+      "scenario": "filesystem-memory",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [],
+        "filesystem/read_multiple_files": [],
+        "filesystem/read_text_file": [],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "lethal-trifecta-lint",
+      "detail": "verdict=ok present=['private_data']",
+      "exit_code": 0,
+      "scenario": "filesystem-git",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [],
+        "filesystem/read_multiple_files": [],
+        "filesystem/read_text_file": [],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=75",
+      "exit_code": 0,
+      "scenario": "github-alone",
+      "status": "ok",
+      "tool_labels": {
+        "github/add_comment_to_pending_review": [
+          "U",
+          "E"
+        ],
+        "github/add_issue_comment": [
+          "U"
+        ],
+        "github/add_reply_to_pull_request_comment": [
+          "U"
+        ],
+        "github/assign_copilot_to_issue": [
+          "P",
+          "U"
+        ],
+        "github/create_branch": [],
+        "github/create_or_update_file": [
+          "P"
+        ],
+        "github/create_pull_request": [
+          "U"
+        ],
+        "github/create_repository": [],
+        "github/delete_file": [],
+        "github/fork_repository": [],
+        "github/get_commit": [
+          "E"
+        ],
+        "github/get_file_contents": [
+          "P"
+        ],
+        "github/get_label": [],
+        "github/get_latest_release": [],
+        "github/get_me": [],
+        "github/get_release_by_tag": [],
+        "github/get_tag": [],
+        "github/get_team_members": [],
+        "github/get_teams": [],
+        "github/issue_read": [],
+        "github/issue_write": [],
+        "github/list_branches": [],
+        "github/list_commits": [],
+        "github/list_issue_fields": [
+          "P"
+        ],
+        "github/list_issue_types": [],
+        "github/list_issues": [
+          "U"
+        ],
+        "github/list_pull_requests": [
+          "U"
+        ],
+        "github/list_releases": [],
+        "github/list_repository_collaborators": [],
+        "github/list_tags": [],
+        "github/merge_pull_request": [
+          "U"
+        ],
+        "github/pull_request_read": [
+          "U"
+        ],
+        "github/pull_request_review_write": [
+          "U"
+        ],
+        "github/push_files": [
+          "E"
+        ],
+        "github/request_copilot_review": [
+          "U"
+        ],
+        "github/search_code": [],
+        "github/search_commits": [
+          "E"
+        ],
+        "github/search_issues": [
+          "P"
+        ],
+        "github/search_pull_requests": [
+          "U"
+        ],
+        "github/search_repositories": [],
+        "github/search_users": [
+          "P"
+        ],
+        "github/sub_issue_write": [],
+        "github/ui_get": [
+          "U"
+        ],
+        "github/update_issue_comment": [
+          "U"
+        ],
+        "github/update_pull_request": [
+          "U"
+        ],
+        "github/update_pull_request_branch": [
+          "U"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=75",
+      "exit_code": 0,
+      "scenario": "supabase-alone",
+      "status": "ok",
+      "tool_labels": {
+        "supabase/apply_migration": [
+          "P"
+        ],
+        "supabase/confirm_cost": [
+          "E"
+        ],
+        "supabase/create_branch": [
+          "P",
+          "E"
+        ],
+        "supabase/create_project": [
+          "U",
+          "E"
+        ],
+        "supabase/delete_branch": [],
+        "supabase/deploy_edge_function": [],
+        "supabase/execute_sql": [
+          "P",
+          "U",
+          "E"
+        ],
+        "supabase/generate_typescript_types": [],
+        "supabase/get_advisors": [
+          "P"
+        ],
+        "supabase/get_cost": [],
+        "supabase/get_edge_function": [],
+        "supabase/get_organization": [],
+        "supabase/get_project": [
+          "U"
+        ],
+        "supabase/get_project_url": [
+          "U"
+        ],
+        "supabase/get_publishable_keys": [
+          "P"
+        ],
+        "supabase/get_storage_config": [],
+        "supabase/list_branches": [],
+        "supabase/list_edge_functions": [],
+        "supabase/list_extensions": [
+          "P"
+        ],
+        "supabase/list_migrations": [
+          "P"
+        ],
+        "supabase/list_organizations": [],
+        "supabase/list_projects": [],
+        "supabase/list_storage_buckets": [],
+        "supabase/list_tables": [],
+        "supabase/merge_branch": [],
+        "supabase/pause_project": [],
+        "supabase/query_logs": [
+          "P"
+        ],
+        "supabase/rebase_branch": [],
+        "supabase/reset_branch": [],
+        "supabase/restore_project": [],
+        "supabase/search_docs": [
+          "P"
+        ],
+        "supabase/update_storage_config": []
+      },
+      "verdict": true
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=75",
+      "exit_code": 0,
+      "scenario": "slack-alone",
+      "status": "ok",
+      "tool_labels": {
+        "slack/channels_list": [],
+        "slack/channels_me": [],
+        "slack/conversations_history": [],
+        "slack/conversations_join": [],
+        "slack/conversations_leave": [],
+        "slack/conversations_mark": [],
+        "slack/conversations_replies": [],
+        "slack/conversations_search_messages": [
+          "P"
+        ],
+        "slack/conversations_unreads": [
+          "E"
+        ],
+        "slack/saved_clear_completed": [],
+        "slack/saved_update": [],
+        "slack/usergroups_create": [
+          "U"
+        ],
+        "slack/usergroups_list": [
+          "U",
+          "E"
+        ],
+        "slack/usergroups_me": [],
+        "slack/usergroups_update": [],
+        "slack/usergroups_users_update": [],
+        "slack/users_search": [
+          "U"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=75",
+      "exit_code": 0,
+      "scenario": "playwright-alone",
+      "status": "ok",
+      "tool_labels": {
+        "playwright/browser_click": [
+          "U"
+        ],
+        "playwright/browser_close": [],
+        "playwright/browser_console_messages": [],
+        "playwright/browser_drag": [],
+        "playwright/browser_drop": [],
+        "playwright/browser_emulate_media": [],
+        "playwright/browser_evaluate": [],
+        "playwright/browser_file_upload": [
+          "E"
+        ],
+        "playwright/browser_fill_form": [],
+        "playwright/browser_find": [],
+        "playwright/browser_handle_dialog": [],
+        "playwright/browser_hover": [],
+        "playwright/browser_navigate": [],
+        "playwright/browser_navigate_back": [],
+        "playwright/browser_network_request": [
+          "E"
+        ],
+        "playwright/browser_network_requests": [
+          "E"
+        ],
+        "playwright/browser_press_key": [],
+        "playwright/browser_resize": [],
+        "playwright/browser_run_code_unsafe": [],
+        "playwright/browser_select_option": [
+          "P"
+        ],
+        "playwright/browser_snapshot": [],
+        "playwright/browser_tabs": [
+          "P"
+        ],
+        "playwright/browser_take_screenshot": [],
+        "playwright/browser_type": [],
+        "playwright/browser_wait_for": []
+      },
+      "verdict": true
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=50",
+      "exit_code": 0,
+      "scenario": "notion-alone",
+      "status": "ok",
+      "tool_labels": {
+        "notion/API-create-a-comment": [],
+        "notion/API-create-a-data-source": [],
+        "notion/API-delete-a-block": [],
+        "notion/API-get-block-children": [],
+        "notion/API-get-self": [],
+        "notion/API-get-user": [],
+        "notion/API-get-users": [],
+        "notion/API-list-data-source-templates": [],
+        "notion/API-move-page": [],
+        "notion/API-patch-block-children": [],
+        "notion/API-patch-page": [],
+        "notion/API-post-page": [
+          "E"
+        ],
+        "notion/API-post-search": [
+          "E"
+        ],
+        "notion/API-query-data-source": [
+          "P"
+        ],
+        "notion/API-retrieve-a-block": [],
+        "notion/API-retrieve-a-comment": [],
+        "notion/API-retrieve-a-data-source": [],
+        "notion/API-retrieve-a-database": [
+          "P"
+        ],
+        "notion/API-retrieve-a-page": [],
+        "notion/API-retrieve-a-page-property": [],
+        "notion/API-retrieve-page-markdown": [],
+        "notion/API-update-a-block": [],
+        "notion/API-update-a-data-source": [],
+        "notion/API-update-page-markdown": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=20",
+      "exit_code": 0,
+      "scenario": "filesystem-alone",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [
+          "P"
+        ],
+        "filesystem/directory_tree": [
+          "P"
+        ],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [
+          "P"
+        ],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=20",
+      "exit_code": 0,
+      "scenario": "memory-alone",
+      "status": "ok",
+      "tool_labels": {
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": [
+          "P"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=50",
+      "exit_code": 0,
+      "scenario": "git-alone",
+      "status": "ok",
+      "tool_labels": {
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [
+          "E"
+        ],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [
+          "E"
+        ],
+        "git/git_diff_unstaged": [
+          "P"
+        ],
+        "git/git_log": [
+          "E"
+        ],
+        "git/git_reset": [],
+        "git/git_show": [
+          "E"
+        ],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=20",
+      "exit_code": 0,
+      "scenario": "fetch-alone",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=50",
+      "exit_code": 0,
+      "scenario": "filesystem-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "filesystem/create_directory": [
+          "P"
+        ],
+        "filesystem/directory_tree": [
+          "P"
+        ],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [
+          "P"
+        ],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=True risk=90",
+      "exit_code": 0,
+      "scenario": "git-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [
+          "E"
+        ],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [
+          "E"
+        ],
+        "git/git_diff_unstaged": [
+          "P"
+        ],
+        "git/git_log": [
+          "E"
+        ],
+        "git/git_reset": [],
+        "git/git_show": [
+          "E"
+        ],
+        "git/git_status": []
+      },
+      "verdict": true
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=20",
+      "exit_code": 0,
+      "scenario": "filesystem-memory",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [
+          "P"
+        ],
+        "filesystem/directory_tree": [
+          "P"
+        ],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [
+          "P"
+        ],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": [
+          "P"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "mcp-trifecta",
+      "detail": "cross_server=False risk=50",
+      "exit_code": 0,
+      "scenario": "filesystem-git",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [
+          "P"
+        ],
+        "filesystem/directory_tree": [
+          "P"
+        ],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [
+          "P"
+        ],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [
+          "E"
+        ],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [
+          "E"
+        ],
+        "git/git_diff_unstaged": [
+          "P"
+        ],
+        "git/git_log": [
+          "E"
+        ],
+        "git/git_reset": [],
+        "git/git_show": [
+          "E"
+        ],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "Lethal trifecta present within a single server: trifecta-bench:github/get_commit [private_data_source] \u2192 trifecta-bench:github/list_issue_fields [untrusted_content_ingress] \u2192 trifecta-bench:github/add_comment_to_pending_review [exfiltration_channel]",
+      "exit_code": 0,
+      "scenario": "github-alone",
+      "status": "ok",
+      "tool_labels": {
+        "github/add_comment_to_pending_review": [
+          "E"
+        ],
+        "github/add_issue_comment": [
+          "E"
+        ],
+        "github/add_reply_to_pull_request_comment": [],
+        "github/assign_copilot_to_issue": [],
+        "github/create_branch": [],
+        "github/create_or_update_file": [],
+        "github/create_pull_request": [
+          "E"
+        ],
+        "github/create_repository": [],
+        "github/delete_file": [],
+        "github/fork_repository": [],
+        "github/get_commit": [
+          "P"
+        ],
+        "github/get_file_contents": [
+          "P"
+        ],
+        "github/get_label": [],
+        "github/get_latest_release": [],
+        "github/get_me": [],
+        "github/get_release_by_tag": [],
+        "github/get_tag": [],
+        "github/get_team_members": [],
+        "github/get_teams": [],
+        "github/issue_read": [],
+        "github/issue_write": [],
+        "github/list_branches": [
+          "P"
+        ],
+        "github/list_commits": [
+          "P"
+        ],
+        "github/list_issue_fields": [
+          "U"
+        ],
+        "github/list_issue_types": [
+          "U"
+        ],
+        "github/list_issues": [
+          "U"
+        ],
+        "github/list_pull_requests": [
+          "U"
+        ],
+        "github/list_releases": [],
+        "github/list_repository_collaborators": [
+          "P"
+        ],
+        "github/list_tags": [],
+        "github/merge_pull_request": [],
+        "github/pull_request_read": [],
+        "github/pull_request_review_write": [],
+        "github/push_files": [],
+        "github/request_copilot_review": [],
+        "github/search_code": [
+          "P"
+        ],
+        "github/search_commits": [],
+        "github/search_issues": [],
+        "github/search_pull_requests": [],
+        "github/search_repositories": [],
+        "github/search_users": [],
+        "github/sub_issue_write": [],
+        "github/ui_get": [],
+        "github/update_issue_comment": [],
+        "github/update_pull_request": [],
+        "github/update_pull_request_branch": []
+      },
+      "verdict": true
+    },
+    {
+      "checker": "triflow",
+      "detail": "Lethal trifecta present within a single server: trifecta-bench:supabase/execute_sql [private_data_source] \u2192 trifecta-bench:supabase/list_projects [untrusted_content_ingress] \u2192 trifecta-bench:supabase/create_project [exfiltration_channel]",
+      "exit_code": 0,
+      "scenario": "supabase-alone",
+      "status": "ok",
+      "tool_labels": {
+        "supabase/apply_migration": [],
+        "supabase/confirm_cost": [],
+        "supabase/create_branch": [],
+        "supabase/create_project": [
+          "E"
+        ],
+        "supabase/delete_branch": [],
+        "supabase/deploy_edge_function": [],
+        "supabase/execute_sql": [
+          "P"
+        ],
+        "supabase/generate_typescript_types": [],
+        "supabase/get_advisors": [],
+        "supabase/get_cost": [],
+        "supabase/get_edge_function": [],
+        "supabase/get_organization": [],
+        "supabase/get_project": [
+          "U"
+        ],
+        "supabase/get_project_url": [
+          "U"
+        ],
+        "supabase/get_publishable_keys": [],
+        "supabase/get_storage_config": [],
+        "supabase/list_branches": [
+          "P"
+        ],
+        "supabase/list_edge_functions": [],
+        "supabase/list_extensions": [],
+        "supabase/list_migrations": [],
+        "supabase/list_organizations": [],
+        "supabase/list_projects": [
+          "U"
+        ],
+        "supabase/list_storage_buckets": [],
+        "supabase/list_tables": [],
+        "supabase/merge_branch": [],
+        "supabase/pause_project": [],
+        "supabase/query_logs": [],
+        "supabase/rebase_branch": [],
+        "supabase/reset_branch": [],
+        "supabase/restore_project": [],
+        "supabase/search_docs": [],
+        "supabase/update_storage_config": []
+      },
+      "verdict": true
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "slack-alone",
+      "status": "ok",
+      "tool_labels": {
+        "slack/channels_list": [],
+        "slack/channels_me": [],
+        "slack/conversations_history": [],
+        "slack/conversations_join": [],
+        "slack/conversations_leave": [],
+        "slack/conversations_mark": [],
+        "slack/conversations_replies": [],
+        "slack/conversations_search_messages": [
+          "P"
+        ],
+        "slack/conversations_unreads": [
+          "P"
+        ],
+        "slack/saved_clear_completed": [],
+        "slack/saved_update": [],
+        "slack/usergroups_create": [],
+        "slack/usergroups_list": [],
+        "slack/usergroups_me": [],
+        "slack/usergroups_update": [],
+        "slack/usergroups_users_update": [],
+        "slack/users_search": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "Lethal trifecta present within a single server: trifecta-bench:playwright/browser_run_code_unsafe [private_data_source] \u2192 trifecta-bench:playwright/browser_close [untrusted_content_ingress] \u2192 trifecta-bench:playwright/browser_run_code_unsafe [exfiltration_channel]",
+      "exit_code": 0,
+      "scenario": "playwright-alone",
+      "status": "ok",
+      "tool_labels": {
+        "playwright/browser_click": [
+          "U"
+        ],
+        "playwright/browser_close": [
+          "U"
+        ],
+        "playwright/browser_console_messages": [
+          "U"
+        ],
+        "playwright/browser_drag": [
+          "U"
+        ],
+        "playwright/browser_drop": [
+          "U"
+        ],
+        "playwright/browser_emulate_media": [
+          "U"
+        ],
+        "playwright/browser_evaluate": [
+          "U"
+        ],
+        "playwright/browser_file_upload": [
+          "U"
+        ],
+        "playwright/browser_fill_form": [
+          "U"
+        ],
+        "playwright/browser_find": [
+          "U"
+        ],
+        "playwright/browser_handle_dialog": [
+          "U"
+        ],
+        "playwright/browser_hover": [
+          "U"
+        ],
+        "playwright/browser_navigate": [
+          "U"
+        ],
+        "playwright/browser_navigate_back": [
+          "U"
+        ],
+        "playwright/browser_network_request": [
+          "U"
+        ],
+        "playwright/browser_network_requests": [
+          "U"
+        ],
+        "playwright/browser_press_key": [
+          "U"
+        ],
+        "playwright/browser_resize": [
+          "U"
+        ],
+        "playwright/browser_run_code_unsafe": [
+          "U"
+        ],
+        "playwright/browser_select_option": [
+          "U"
+        ],
+        "playwright/browser_snapshot": [
+          "U"
+        ],
+        "playwright/browser_tabs": [
+          "U"
+        ],
+        "playwright/browser_take_screenshot": [
+          "U"
+        ],
+        "playwright/browser_type": [
+          "U"
+        ],
+        "playwright/browser_wait_for": [
+          "U"
+        ]
+      },
+      "verdict": true
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "notion-alone",
+      "status": "ok",
+      "tool_labels": {
+        "notion/API-create-a-comment": [
+          "E"
+        ],
+        "notion/API-create-a-data-source": [],
+        "notion/API-delete-a-block": [],
+        "notion/API-get-block-children": [],
+        "notion/API-get-self": [],
+        "notion/API-get-user": [],
+        "notion/API-get-users": [],
+        "notion/API-list-data-source-templates": [],
+        "notion/API-move-page": [],
+        "notion/API-patch-block-children": [],
+        "notion/API-patch-page": [],
+        "notion/API-post-page": [],
+        "notion/API-post-search": [],
+        "notion/API-query-data-source": [],
+        "notion/API-retrieve-a-block": [],
+        "notion/API-retrieve-a-comment": [],
+        "notion/API-retrieve-a-data-source": [],
+        "notion/API-retrieve-a-database": [],
+        "notion/API-retrieve-a-page": [],
+        "notion/API-retrieve-a-page-property": [],
+        "notion/API-retrieve-page-markdown": [],
+        "notion/API-update-a-block": [],
+        "notion/API-update-a-data-source": [],
+        "notion/API-update-page-markdown": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "filesystem-alone",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "memory-alone",
+      "status": "ok",
+      "tool_labels": {
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "git-alone",
+      "status": "ok",
+      "tool_labels": {
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "fetch-alone",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ]
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "filesystem-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "git-fetch",
+      "status": "ok",
+      "tool_labels": {
+        "fetch/fetch": [
+          "U"
+        ],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "filesystem-memory",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "memory/add_observations": [],
+        "memory/create_entities": [],
+        "memory/create_relations": [],
+        "memory/delete_entities": [],
+        "memory/delete_observations": [],
+        "memory/delete_relations": [],
+        "memory/open_nodes": [],
+        "memory/read_graph": [],
+        "memory/search_nodes": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "triflow",
+      "detail": "no trifecta finding",
+      "exit_code": 0,
+      "scenario": "filesystem-git",
+      "status": "ok",
+      "tool_labels": {
+        "filesystem/create_directory": [],
+        "filesystem/directory_tree": [],
+        "filesystem/edit_file": [],
+        "filesystem/get_file_info": [
+          "P"
+        ],
+        "filesystem/list_allowed_directories": [],
+        "filesystem/list_directory": [
+          "P"
+        ],
+        "filesystem/list_directory_with_sizes": [
+          "P"
+        ],
+        "filesystem/move_file": [],
+        "filesystem/read_file": [
+          "P"
+        ],
+        "filesystem/read_media_file": [
+          "P"
+        ],
+        "filesystem/read_multiple_files": [
+          "P"
+        ],
+        "filesystem/read_text_file": [
+          "P"
+        ],
+        "filesystem/search_files": [
+          "P"
+        ],
+        "filesystem/write_file": [],
+        "git/git_add": [],
+        "git/git_branch": [],
+        "git/git_checkout": [],
+        "git/git_commit": [],
+        "git/git_create_branch": [],
+        "git/git_diff": [],
+        "git/git_diff_staged": [],
+        "git/git_diff_unstaged": [],
+        "git/git_log": [],
+        "git/git_reset": [],
+        "git/git_show": [],
+        "git/git_status": []
+      },
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "github-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "supabase-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: EXFILTRATION",
+      "exit_code": 0,
+      "scenario": "slack-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "playwright-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "notion-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: SENSITIVE_DATA",
+      "exit_code": 0,
+      "scenario": "filesystem-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "memory-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "no findings",
+      "exit_code": 0,
+      "scenario": "git-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: UNTRUSTED_CONTENT",
+      "exit_code": 0,
+      "scenario": "fetch-alone",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: SENSITIVE_DATA, UNTRUSTED_CONTENT",
+      "exit_code": 0,
+      "scenario": "filesystem-fetch",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: UNTRUSTED_CONTENT",
+      "exit_code": 0,
+      "scenario": "git-fetch",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: SENSITIVE_DATA",
+      "exit_code": 0,
+      "scenario": "filesystem-memory",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    },
+    {
+      "checker": "trifecta-check",
+      "detail": "server findings: SENSITIVE_DATA",
+      "exit_code": 0,
+      "scenario": "filesystem-git",
+      "status": "ok",
+      "tool_labels": null,
+      "verdict": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"has_trifecta": false, "capabilities": ["SENSITIVE_DATA", "UNTRUSTED_CONTENT"], "findings": ["Web Fetch/Search MCP server detected: fetch", "FileSystem MCP server detected: filesystem"], "errors": []}

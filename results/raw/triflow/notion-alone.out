@@ -1,0 +1,125 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:notion",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "exfiltration_channel"
+      ],
+      "tools": [
+        {
+          "name": "API-get-user",
+          "capabilities": []
+        },
+        {
+          "name": "API-get-users",
+          "capabilities": []
+        },
+        {
+          "name": "API-get-self",
+          "capabilities": []
+        },
+        {
+          "name": "API-post-search",
+          "capabilities": []
+        },
+        {
+          "name": "API-get-block-children",
+          "capabilities": []
+        },
+        {
+          "name": "API-patch-block-children",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-block",
+          "capabilities": []
+        },
+        {
+          "name": "API-update-a-block",
+          "capabilities": []
+        },
+        {
+          "name": "API-delete-a-block",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-page",
+          "capabilities": []
+        },
+        {
+          "name": "API-patch-page",
+          "capabilities": []
+        },
+        {
+          "name": "API-post-page",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-page-property",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-comment",
+          "capabilities": []
+        },
+        {
+          "name": "API-create-a-comment",
+          "capabilities": [
+            "exfiltration_channel"
+          ]
+        },
+        {
+          "name": "API-query-data-source",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-data-source",
+          "capabilities": []
+        },
+        {
+          "name": "API-update-a-data-source",
+          "capabilities": []
+        },
+        {
+          "name": "API-create-a-data-source",
+          "capabilities": []
+        },
+        {
+          "name": "API-list-data-source-templates",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-a-database",
+          "capabilities": []
+        },
+        {
+          "name": "API-move-page",
+          "capabilities": []
+        },
+        {
+          "name": "API-retrieve-page-markdown",
+          "capabilities": []
+        },
+        {
+          "name": "API-update-page-markdown",
+          "capabilities": []
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

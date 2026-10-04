@@ -1,0 +1,223 @@
+{
+  "verdict": "warn",
+  "trifecta": false,
+  "present_capabilities": [
+    "private_data",
+    "untrusted"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "search_docs",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_organizations",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_organization",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_projects",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_project",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_cost",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "confirm_cost",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_project",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "pause_project",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "restore_project",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_tables",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_extensions",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "list_migrations",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "apply_migration",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database",
+          "read_file"
+        ]
+      }
+    },
+    {
+      "name": "execute_sql",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database",
+          "read_file",
+          "sql"
+        ]
+      }
+    },
+    {
+      "name": "query_logs",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_advisors",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "get_project_url",
+      "capabilities": [
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "get_publishable_keys",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "generate_typescript_types",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_edge_functions",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_edge_function",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "deploy_edge_function",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "create_branch",
+      "capabilities": [
+        "private_data"
+      ],
+      "evidence": {
+        "private_data": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "list_branches",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "delete_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "merge_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "reset_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "rebase_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "list_storage_buckets",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "get_storage_config",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "update_storage_config",
+      "capabilities": [],
+      "evidence": {}
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 32,
+  "trifecta_present": true,
+  "cross_server": false,
+  "risk_score": 75,
+  "counts": {
+    "critical": 0,
+    "high": 4,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "supabase::search_docs",
+      "supabase::list_extensions",
+      "supabase::list_migrations",
+      "supabase::apply_migration",
+      "supabase::execute_sql",
+      "supabase::query_logs",
+      "supabase::get_advisors",
+      "supabase::get_publishable_keys",
+      "supabase::create_branch"
+    ],
+    "untrusted_content": [
+      "supabase::get_project",
+      "supabase::create_project",
+      "supabase::execute_sql",
+      "supabase::get_project_url"
+    ],
+    "exfil": [
+      "supabase::confirm_cost",
+      "supabase::create_project",
+      "supabase::execute_sql",
+      "supabase::create_branch"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA001",
+      "title": "Lethal trifecta present within the fleet",
+      "severity": "high",
+      "message": "This fleet can simultaneously (1) read private data, (2) ingest untrusted content, and (3) communicate externally. At least one server combines all three capabilities on its own.",
+      "location": "supabase",
+      "evidence": [
+        "private_data: supabase::search_docs, supabase::list_extensions, supabase::list_migrations, supabase::apply_migration, supabase::execute_sql ...",
+        "untrusted_content: supabase::get_project, supabase::create_project, supabase::execute_sql, supabase::get_project_url",
+        "exfil: supabase::confirm_cost, supabase::create_project, supabase::execute_sql, supabase::create_branch",
+        "note: server(s) supabase individually combine all three capabilities."
+      ],
+      "remediation": "Break the trifecta: remove or sandbox one leg. Common fixes: run untrusted-content tools in an isolated agent that has no private-data or exfil tools; require human approval on exfil actions; or apply content provenance / taint tracking so untrusted text can't trigger sensitive reads followed by outbound calls."
+    },
+    {
+      "id": "TRIFECTA002",
+      "title": "Example attack path #1",
+      "severity": "high",
+      "message": "Untrusted content enters via `supabase::get_project`, is used to read private data via `supabase::search_docs`, and is exfiltrated via `supabase::confirm_cost` (1 server(s) involved).",
+      "location": "supabase->supabase->supabase",
+      "evidence": [
+        "entry:  supabase::get_project - Gets details for a Supabase project.",
+        "source: supabase::search_docs - Search the Supabase documentation using GraphQL. Must be a valid GraphQL query. You should default to calling this even ",
+        "sink:   supabase::confirm_cost - Ask the user to confirm their understanding of the cost of creating a new project or branch. Call `get_cost` first. Retu"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA003",
+      "title": "Example attack path #2",
+      "severity": "high",
+      "message": "Untrusted content enters via `supabase::get_project`, is used to read private data via `supabase::search_docs`, and is exfiltrated via `supabase::create_project` (1 server(s) involved).",
+      "location": "supabase->supabase->supabase",
+      "evidence": [
+        "entry:  supabase::get_project - Gets details for a Supabase project.",
+        "source: supabase::search_docs - Search the Supabase documentation using GraphQL. Must be a valid GraphQL query. You should default to calling this even ",
+        "sink:   supabase::create_project - Creates a new Supabase project. Always ask the user which organization to create the project in. The project can take a "
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA004",
+      "title": "Example attack path #3",
+      "severity": "high",
+      "message": "Untrusted content enters via `supabase::get_project`, is used to read private data via `supabase::search_docs`, and is exfiltrated via `supabase::execute_sql` (1 server(s) involved).",
+      "location": "supabase->supabase->supabase",
+      "evidence": [
+        "entry:  supabase::get_project - Gets details for a Supabase project.",
+        "source: supabase::search_docs - Search the Supabase documentation using GraphQL. Must be a valid GraphQL query. You should default to calling this even ",
+        "sink:   supabase::execute_sql - Executes raw SQL in the Postgres database. Use `apply_migration` instead for DDL operations. This may return untrusted u"
+      ],
+      "remediation": ""
+    }
+  ]
+}

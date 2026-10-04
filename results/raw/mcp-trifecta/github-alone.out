@@ -1,0 +1,106 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 46,
+  "trifecta_present": true,
+  "cross_server": false,
+  "risk_score": 75,
+  "counts": {
+    "critical": 0,
+    "high": 4,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "github::assign_copilot_to_issue",
+      "github::create_or_update_file",
+      "github::get_file_contents",
+      "github::list_issue_fields",
+      "github::search_issues",
+      "github::search_users"
+    ],
+    "untrusted_content": [
+      "github::add_comment_to_pending_review",
+      "github::add_issue_comment",
+      "github::add_reply_to_pull_request_comment",
+      "github::assign_copilot_to_issue",
+      "github::create_pull_request",
+      "github::list_issues",
+      "github::list_pull_requests",
+      "github::merge_pull_request",
+      "github::pull_request_read",
+      "github::pull_request_review_write",
+      "github::request_copilot_review",
+      "github::search_pull_requests",
+      "github::ui_get",
+      "github::update_issue_comment",
+      "github::update_pull_request",
+      "github::update_pull_request_branch"
+    ],
+    "exfil": [
+      "github::add_comment_to_pending_review",
+      "github::get_commit",
+      "github::push_files",
+      "github::search_commits"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA001",
+      "title": "Lethal trifecta present within the fleet",
+      "severity": "high",
+      "message": "This fleet can simultaneously (1) read private data, (2) ingest untrusted content, and (3) communicate externally. At least one server combines all three capabilities on its own.",
+      "location": "github",
+      "evidence": [
+        "private_data: github::assign_copilot_to_issue, github::create_or_update_file, github::get_file_contents, github::list_issue_fields, github::search_issues ...",
+        "untrusted_content: github::add_comment_to_pending_review, github::add_issue_comment, github::add_reply_to_pull_request_comment, github::assign_copilot_to_issue, github::create_pull_request ...",
+        "exfil: github::add_comment_to_pending_review, github::get_commit, github::push_files, github::search_commits",
+        "note: server(s) github individually combine all three capabilities."
+      ],
+      "remediation": "Break the trifecta: remove or sandbox one leg. Common fixes: run untrusted-content tools in an isolated agent that has no private-data or exfil tools; require human approval on exfil actions; or apply content provenance / taint tracking so untrusted text can't trigger sensitive reads followed by outbound calls."
+    },
+    {
+      "id": "TRIFECTA002",
+      "title": "Example attack path #1",
+      "severity": "high",
+      "message": "Untrusted content enters via `github::add_comment_to_pending_review`, is used to read private data via `github::assign_copilot_to_issue`, and is exfiltrated via `github::add_comment_to_pending_review` (1 server(s) involved).",
+      "location": "github->github->github",
+      "evidence": [
+        "entry:  github::add_comment_to_pending_review - Add review comment to the requester's latest pending pull request review. A pending review needs to already exist to cal",
+        "source: github::assign_copilot_to_issue - Assign Copilot to a specific issue in a GitHub repository. This tool can help with the following outcomes: - a Pull Requ",
+        "sink:   github::add_comment_to_pending_review - Add review comment to the requester's latest pending pull request review. A pending review needs to already exist to cal"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA003",
+      "title": "Example attack path #2",
+      "severity": "high",
+      "message": "Untrusted content enters via `github::add_comment_to_pending_review`, is used to read private data via `github::assign_copilot_to_issue`, and is exfiltrated via `github::get_commit` (1 server(s) involved).",
+      "location": "github->github->github",
+      "evidence": [
+        "entry:  github::add_comment_to_pending_review - Add review comment to the requester's latest pending pull request review. A pending review needs to already exist to cal",
+        "source: github::assign_copilot_to_issue - Assign Copilot to a specific issue in a GitHub repository. This tool can help with the following outcomes: - a Pull Requ",
+        "sink:   github::get_commit - Get details for a commit from a GitHub repository"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA004",
+      "title": "Example attack path #3",
+      "severity": "high",
+      "message": "Untrusted content enters via `github::add_comment_to_pending_review`, is used to read private data via `github::assign_copilot_to_issue`, and is exfiltrated via `github::push_files` (1 server(s) involved).",
+      "location": "github->github->github",
+      "evidence": [
+        "entry:  github::add_comment_to_pending_review - Add review comment to the requester's latest pending pull request review. A pending review needs to already exist to cal",
+        "source: github::assign_copilot_to_issue - Assign Copilot to a specific issue in a GitHub repository. This tool can help with the following outcomes: - a Pull Requ",
+        "sink:   github::push_files - Push multiple files to a GitHub repository in a single commit"
+      ],
+      "remediation": ""
+    }
+  ]
+}

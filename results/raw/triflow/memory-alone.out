@@ -1,0 +1,69 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 0,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:memory",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "state_changing"
+      ],
+      "tools": [
+        {
+          "name": "create_entities",
+          "capabilities": []
+        },
+        {
+          "name": "create_relations",
+          "capabilities": []
+        },
+        {
+          "name": "add_observations",
+          "capabilities": []
+        },
+        {
+          "name": "delete_entities",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "delete_observations",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "delete_relations",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "read_graph",
+          "capabilities": []
+        },
+        {
+          "name": "search_nodes",
+          "capabilities": []
+        },
+        {
+          "name": "open_nodes",
+          "capabilities": []
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

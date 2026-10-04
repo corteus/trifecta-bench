@@ -1,0 +1,359 @@
+{
+  "triflow_version": "0.1.0",
+  "summary": {
+    "total": 1,
+    "by_severity": {
+      "critical": 1,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "TRIFLOW-TRIFECTA",
+      "finding_type": "lethal_trifecta",
+      "severity": "critical",
+      "title": "Lethal trifecta present within a single server: trifecta-bench:github/get_commit [private_data_source] \u2192 trifecta-bench:github/list_issue_fields [untrusted_content_ingress] \u2192 trifecta-bench:github/add_comment_to_pending_review [exfiltration_channel]",
+      "detail": "The installed fleet jointly satisfies the lethal trifecta within a single server: a tool that reads private data, a tool that ingests attacker-influenceable content, and a tool that can send data outside. Injected instructions in the ingested content can drive the private-data tool and then the exfiltration tool. Representative chain: trifecta-bench:github/get_commit [private_data_source] \u2192 trifecta-bench:github/list_issue_fields [untrusted_content_ingress] \u2192 trifecta-bench:github/add_comment_to_pending_review [exfiltration_channel].",
+      "remediation": "Break at least one leg for the agent that can reach all three: remove or scope down the exfiltration tool, isolate the untrusted-ingress server into a separate agent/session, or gate private-data reads behind human approval. The three capabilities must not be reachable together.",
+      "participants": [
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "get_commit",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "get_file_contents",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_branches",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_commits",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_repository_collaborators",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "search_code",
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": null,
+          "capability": "private_data_source",
+          "role": "private-data source"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_issue_fields",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_issue_types",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_issues",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "list_pull_requests",
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": null,
+          "capability": "untrusted_content_ingress",
+          "role": "untrusted-content ingress"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "add_comment_to_pending_review",
+          "capability": "exfiltration_channel",
+          "role": "exfiltration channel"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "add_issue_comment",
+          "capability": "exfiltration_channel",
+          "role": "exfiltration channel"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": "create_pull_request",
+          "capability": "exfiltration_channel",
+          "role": "exfiltration channel"
+        },
+        {
+          "server_slug": "trifecta-bench:github",
+          "tool_name": null,
+          "capability": "exfiltration_channel",
+          "role": "exfiltration channel"
+        }
+      ],
+      "cross_server": false,
+      "location": null
+    }
+  ],
+  "warnings": [],
+  "servers": [
+    {
+      "slug": "trifecta-bench:github",
+      "client": "trifecta-bench",
+      "transport": "stdio",
+      "capabilities": [
+        "exfiltration_channel",
+        "private_data_source",
+        "state_changing",
+        "untrusted_content_ingress"
+      ],
+      "tools": [
+        {
+          "name": "add_comment_to_pending_review",
+          "capabilities": [
+            "exfiltration_channel"
+          ]
+        },
+        {
+          "name": "add_issue_comment",
+          "capabilities": [
+            "exfiltration_channel"
+          ]
+        },
+        {
+          "name": "add_reply_to_pull_request_comment",
+          "capabilities": []
+        },
+        {
+          "name": "assign_copilot_to_issue",
+          "capabilities": []
+        },
+        {
+          "name": "create_branch",
+          "capabilities": []
+        },
+        {
+          "name": "create_or_update_file",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "create_pull_request",
+          "capabilities": [
+            "exfiltration_channel"
+          ]
+        },
+        {
+          "name": "create_repository",
+          "capabilities": []
+        },
+        {
+          "name": "delete_file",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "fork_repository",
+          "capabilities": []
+        },
+        {
+          "name": "get_commit",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "get_file_contents",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "get_label",
+          "capabilities": []
+        },
+        {
+          "name": "get_latest_release",
+          "capabilities": []
+        },
+        {
+          "name": "get_me",
+          "capabilities": []
+        },
+        {
+          "name": "get_release_by_tag",
+          "capabilities": []
+        },
+        {
+          "name": "get_tag",
+          "capabilities": []
+        },
+        {
+          "name": "get_team_members",
+          "capabilities": []
+        },
+        {
+          "name": "get_teams",
+          "capabilities": []
+        },
+        {
+          "name": "issue_read",
+          "capabilities": []
+        },
+        {
+          "name": "issue_write",
+          "capabilities": []
+        },
+        {
+          "name": "list_branches",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "list_commits",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "list_issue_fields",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "list_issue_types",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "list_issues",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "list_pull_requests",
+          "capabilities": [
+            "untrusted_content_ingress"
+          ]
+        },
+        {
+          "name": "list_releases",
+          "capabilities": []
+        },
+        {
+          "name": "list_repository_collaborators",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "list_tags",
+          "capabilities": []
+        },
+        {
+          "name": "merge_pull_request",
+          "capabilities": []
+        },
+        {
+          "name": "pull_request_read",
+          "capabilities": []
+        },
+        {
+          "name": "pull_request_review_write",
+          "capabilities": []
+        },
+        {
+          "name": "push_files",
+          "capabilities": []
+        },
+        {
+          "name": "request_copilot_review",
+          "capabilities": []
+        },
+        {
+          "name": "search_code",
+          "capabilities": [
+            "private_data_source"
+          ]
+        },
+        {
+          "name": "search_commits",
+          "capabilities": []
+        },
+        {
+          "name": "search_issues",
+          "capabilities": []
+        },
+        {
+          "name": "search_pull_requests",
+          "capabilities": []
+        },
+        {
+          "name": "search_repositories",
+          "capabilities": []
+        },
+        {
+          "name": "search_users",
+          "capabilities": []
+        },
+        {
+          "name": "sub_issue_write",
+          "capabilities": []
+        },
+        {
+          "name": "ui_get",
+          "capabilities": []
+        },
+        {
+          "name": "update_issue_comment",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "update_pull_request",
+          "capabilities": [
+            "state_changing"
+          ]
+        },
+        {
+          "name": "update_pull_request_branch",
+          "capabilities": [
+            "state_changing"
+          ]
+        }
+      ],
+      "introspection_error": null
+    }
+  ]
+}

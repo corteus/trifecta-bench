@@ -1,0 +1,86 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 25,
+  "trifecta_present": true,
+  "cross_server": false,
+  "risk_score": 75,
+  "counts": {
+    "critical": 0,
+    "high": 4,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "playwright::browser_select_option",
+      "playwright::browser_tabs"
+    ],
+    "untrusted_content": [
+      "playwright::browser_click"
+    ],
+    "exfil": [
+      "playwright::browser_file_upload",
+      "playwright::browser_network_requests",
+      "playwright::browser_network_request"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA001",
+      "title": "Lethal trifecta present within the fleet",
+      "severity": "high",
+      "message": "This fleet can simultaneously (1) read private data, (2) ingest untrusted content, and (3) communicate externally. At least one server combines all three capabilities on its own.",
+      "location": "playwright",
+      "evidence": [
+        "private_data: playwright::browser_select_option, playwright::browser_tabs",
+        "untrusted_content: playwright::browser_click",
+        "exfil: playwright::browser_file_upload, playwright::browser_network_requests, playwright::browser_network_request",
+        "note: server(s) playwright individually combine all three capabilities."
+      ],
+      "remediation": "Break the trifecta: remove or sandbox one leg. Common fixes: run untrusted-content tools in an isolated agent that has no private-data or exfil tools; require human approval on exfil actions; or apply content provenance / taint tracking so untrusted text can't trigger sensitive reads followed by outbound calls."
+    },
+    {
+      "id": "TRIFECTA002",
+      "title": "Example attack path #1",
+      "severity": "high",
+      "message": "Untrusted content enters via `playwright::browser_click`, is used to read private data via `playwright::browser_select_option`, and is exfiltrated via `playwright::browser_file_upload` (1 server(s) involved).",
+      "location": "playwright->playwright->playwright",
+      "evidence": [
+        "entry:  playwright::browser_click - Perform click on a web page",
+        "source: playwright::browser_select_option - Select an option in a dropdown",
+        "sink:   playwright::browser_file_upload - Upload one or multiple files"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA003",
+      "title": "Example attack path #2",
+      "severity": "high",
+      "message": "Untrusted content enters via `playwright::browser_click`, is used to read private data via `playwright::browser_select_option`, and is exfiltrated via `playwright::browser_network_requests` (1 server(s) involved).",
+      "location": "playwright->playwright->playwright",
+      "evidence": [
+        "entry:  playwright::browser_click - Perform click on a web page",
+        "source: playwright::browser_select_option - Select an option in a dropdown",
+        "sink:   playwright::browser_network_requests - Returns a numbered list of network requests since loading the page. Use browser_network_request with the number to get f"
+      ],
+      "remediation": ""
+    },
+    {
+      "id": "TRIFECTA004",
+      "title": "Example attack path #3",
+      "severity": "high",
+      "message": "Untrusted content enters via `playwright::browser_click`, is used to read private data via `playwright::browser_select_option`, and is exfiltrated via `playwright::browser_network_request` (1 server(s) involved).",
+      "location": "playwright->playwright->playwright",
+      "evidence": [
+        "entry:  playwright::browser_click - Perform click on a web page",
+        "source: playwright::browser_select_option - Select an option in a dropdown",
+        "sink:   playwright::browser_network_request - Returns full details (headers and body) of a single network request, or a single part if `part` is set. Use the number f"
+      ],
+      "remediation": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {"id": "github-alone", "servers": ["github"], "note": "One server with all three, the setup of the May 2025 GitHub MCP leak."},
+  {"id": "supabase-alone", "servers": ["supabase"], "note": "execute_sql alone reads private rows written by users and writes rows they see."},
+  {"id": "slack-alone", "servers": ["slack"], "note": "Default setup: no message tool, but group descriptions are visible to the whole workspace."},
+  {"id": "playwright-alone", "servers": ["playwright"], "note": "A browser that reads pages and can send data to any site."},
+  {"id": "notion-alone", "servers": ["notion"], "note": "A shared workspace: teammates write pages, the agent can write pages they read."},
+  {"id": "filesystem-alone", "servers": ["filesystem"], "note": "Local files only: private data, nothing untrusted, no way out."},
+  {"id": "memory-alone", "servers": ["memory"], "note": "Local memory graph only."},
+  {"id": "git-alone", "servers": ["git"], "note": "Local repository: private code and others' commits, no push tool."},
+  {"id": "fetch-alone", "servers": ["fetch"], "note": "Untrusted pages and an outbound request, but no private data."},
+  {"id": "filesystem-fetch", "servers": ["filesystem", "fetch"], "note": "The classic split trifecta: local files plus the web."},
+  {"id": "git-fetch", "servers": ["git", "fetch"], "note": "Private code plus the web."},
+  {"id": "filesystem-memory", "servers": ["filesystem", "memory"], "note": "Two local stores, still no way out."},
+  {"id": "filesystem-git", "servers": ["filesystem", "git"], "note": "Private and untrusted, no way out."}
+]

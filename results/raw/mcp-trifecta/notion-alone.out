@@ -1,0 +1,39 @@
+{
+  "tool": "trifecta",
+  "version": "0.2.0",
+  "fleet": "scenario",
+  "servers": 1,
+  "tools": 24,
+  "trifecta_present": false,
+  "cross_server": false,
+  "risk_score": 50,
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "capability_map": {
+    "private_data": [
+      "notion::API-query-data-source",
+      "notion::API-retrieve-a-database"
+    ],
+    "untrusted_content": [],
+    "exfil": [
+      "notion::API-post-search",
+      "notion::API-post-page"
+    ]
+  },
+  "findings": [
+    {
+      "id": "TRIFECTA010",
+      "title": "Fleet is one capability away from a lethal trifecta",
+      "severity": "medium",
+      "message": "The fleet already exposes a sensitive-data source (private_data) and a exfiltration channel (exfil). Installing any server that adds a a injection entry point (untrusted_content) would complete the lethal trifecta and make the agent exploitable.",
+      "location": "scenario",
+      "evidence": [],
+      "remediation": "Treat the missing capability (untrusted_content) as a red line: avoid installing servers that add it alongside the existing two, or isolate them into a separate agent/profile."
+    }
+  ]
+}

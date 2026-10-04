@@ -1,0 +1,12 @@
+{
+  "_note": "How people typically launch each server in an MCP client config. triflow and trifecta-check judge servers by these fields; the other checkers ignore them.",
+  "github": {"command": "docker", "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"]},
+  "supabase": {"command": "npx", "args": ["-y", "@supabase/mcp-server-supabase@latest"]},
+  "playwright": {"command": "npx", "args": ["@playwright/mcp@latest"]},
+  "notion": {"command": "npx", "args": ["-y", "@notionhq/notion-mcp-server"]},
+  "slack": {"command": "npx", "args": ["-y", "slack-mcp-server@latest", "--transport", "stdio"]},
+  "filesystem": {"command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"]},
+  "memory": {"command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"]},
+  "fetch": {"command": "uvx", "args": ["mcp-server-fetch"]},
+  "git": {"command": "uvx", "args": ["mcp-server-git", "--repository", "/path/to/repo"]}
+}

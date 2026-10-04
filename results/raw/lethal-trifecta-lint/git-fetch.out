@@ -1,0 +1,82 @@
+{
+  "verdict": "ok",
+  "trifecta": false,
+  "present_capabilities": [
+    "untrusted"
+  ],
+  "single_tool_trifecta": [],
+  "exfil_pairs": [],
+  "tools": [
+    {
+      "name": "git_status",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff_unstaged",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff_staged",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_diff",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_commit",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_add",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_reset",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_log",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_create_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_checkout",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_show",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "git_branch",
+      "capabilities": [],
+      "evidence": {}
+    },
+    {
+      "name": "fetch",
+      "capabilities": [
+        "untrusted"
+      ],
+      "evidence": {
+        "untrusted": [
+          "fetch"
+        ]
+      }
+    }
+  ]
+}
